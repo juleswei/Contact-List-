@@ -1,5 +1,6 @@
-require 'csv'
+# require 'csv'
 require 'pry'
+
 
 class Contact
 
@@ -19,7 +20,6 @@ class Contact
               show    - Show a contact
               search  - Search contacts
       }
-
       puts menu
 
       response = gets.chomp.downcase
@@ -71,7 +71,6 @@ class Contact
 
     def search(term)
       CSV.foreach('contacts.csv', 'r') do |row|
-        
         return row if row.join(',').downcase.include? term.downcase  
       end
     end
